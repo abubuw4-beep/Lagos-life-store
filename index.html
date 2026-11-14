@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#090b10">
+<title>Lagos Life Official Store</title>
+<style>
+:root{--bg:#090b10;--panel:#121720;--panel2:#0d121a;--line:#27313d;--text:#f7f7f2;--muted:#9ba6b2;--gold:#f5c451;--gold2:#d99b20;--green:#36c98a;--red:#ff7777}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 80% -10%,#34270d 0,transparent 34%),var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,sans-serif;min-height:100vh}
+button,input,select{font:inherit}button{cursor:pointer}.wrap{max-width:900px;margin:auto;padding:20px}.top{position:sticky;top:0;z-index:5;background:#090b10ed;border-bottom:1px solid var(--line);backdrop-filter:blur(12px)}.topin{max-width:900px;margin:auto;padding:14px 20px;display:flex;align-items:center;justify-content:space-between;gap:12px}.brand{display:flex;align-items:center;gap:12px}.coin{width:44px;height:44px;border-radius:14px;background:linear-gradient(145deg,#ffe18a,#bd8116);display:grid;place-items:center;color:#261a03;font-size:25px;font-weight:900;box-shadow:0 5px 22px #d99b2033}.brand h1{font-size:16px;margin:0}.brand p{font-size:11px;color:var(--green);margin:4px 0 0}.pill{font-size:11px;border:1px solid #5e491d;color:var(--gold);padding:8px 10px;border-radius:99px;background:#f5c45112}
+.tabs{display:grid;grid-template-columns:1fr 1fr 1fr;gap:5px;padding:5px;background:var(--panel2);border:1px solid var(--line);border-radius:14px;margin:8px 0 18px}.tab{border:0;background:transparent;color:var(--muted);padding:12px 6px;border-radius:10px;font-weight:700;font-size:13px}.tab.active{background:var(--gold);color:#201704}.section{display:grid;gap:16px}.card{background:linear-gradient(145deg,#151c26,#10151d);border:1px solid var(--line);border-radius:18px;padding:19px;box-shadow:0 12px 35px #0002}.card h2,.card h3{margin:0 0 8px}.muted{color:var(--muted)}.small{font-size:12px;line-height:1.6}.label{display:block;font-size:13px;font-weight:750;margin-bottom:9px}.field{width:100%;background:#090e15;border:1px solid #303b49;color:var(--text);border-radius:11px;padding:13px 14px;outline:none}.field:focus{border-color:var(--gold);box-shadow:0 0 0 3px #f5c45118}.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.pack{border:1px solid var(--line);background:#0c121a;border-radius:13px;padding:14px;text-align:left;color:var(--text);transition:.15s}.pack:hover{border-color:#92702b}.pack.selected{border-color:var(--gold);background:#f5c45112;box-shadow:inset 0 0 0 1px #f5c45144}.pack .amount{font-size:22px;font-weight:900;margin:6px 0}.pack .tag{font-size:10px;color:var(--gold);font-weight:800;text-transform:uppercase;letter-spacing:.5px}.pack .price{font-size:14px;font-weight:800}.row{display:flex;justify-content:space-between;gap:12px;padding:7px 0;font-size:13px}.row span:first-child{color:var(--muted)}.total{border-top:1px solid var(--line);margin-top:8px;padding-top:14px;font-size:17px;font-weight:900}.gold{color:var(--gold)}.btn{border:0;border-radius:12px;padding:14px 16px;font-weight:850;background:linear-gradient(135deg,#ffdf83,#dca52e);color:#211704;width:100%;box-shadow:0 8px 24px #d99b2020}.btn:hover{filter:brightness(1.06)}.btn.secondary{background:#202a36;color:var(--text);box-shadow:none;border:1px solid var(--line)}.btn.danger{background:#57272b;color:#ffdada;box-shadow:none}.btn.smallbtn{width:auto;padding:9px 12px;font-size:12px}.note{padding:12px;border-radius:12px;background:#f5c45112;border:1px solid #80601f;color:#f3d58d;font-size:12px;line-height:1.55}.success{color:var(--green)}.hidden{display:none!important}.summary{background:#0a1017;border:1px solid var(--line);border-radius:13px;padding:13px}.modal{position:fixed;inset:0;background:#000c;z-index:20;display:none;align-items:center;justify-content:center;padding:16px}.modal.show{display:flex}.modalbox{width:min(100%,470px);max-height:90vh;overflow:auto;background:#111822;border:1px solid #3a4655;border-radius:19px;padding:21px;position:relative}.close{position:absolute;right:14px;top:12px;background:transparent;border:0;color:#cbd5e1;font-size:22px}.bankbox{background:#080e15;border:1px solid var(--line);border-radius:13px;padding:14px;margin:14px 0}.bankbox .row{align-items:center}.copy{border:1px solid #5c4920;background:#2a2110;color:#f7d98c;border-radius:8px;padding:5px 8px;font-size:11px}.footer{text-align:center;color:#74808d;font-size:11px;padding:25px 10px 35px}.adminbar{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}.order{padding:13px;border:1px solid var(--line);border-radius:12px;background:#0b1118;margin-top:10px}.orderhead{display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap;font-weight:800}.badge{border-radius:99px;padding:4px 8px;font-size:10px;background:#5a451b;color:#ffdc84}.badge.paid{background:#123d2d;color:#80e6b8}.badge.rejected{background:#4a2025;color:#ffaaaa}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:9px}.stat{padding:12px;background:#0a1017;border:1px solid var(--line);border-radius:12px}.stat b{display:block;font-size:20px;color:var(--gold)}.stat span{font-size:10px;color:var(--muted)}
+@media(min-width:650px){.grid{grid-template-columns:repeat(3,1fr)}.layout{display:grid;grid-template-columns:1.1fr .9fr;gap:16px;align-items:start}.layout .full{grid-column:1/-1}}
+@media(max-width:420px){.wrap{padding:13px}.topin{padding:12px 13px}.brand h1{font-size:14px}.pill{font-size:10px}.card{padding:15px}.tab{font-size:11px}}
+</style>
+</head>
+<body>
+<header class="top"><div class="topin"><div class="brand"><div class="coin">₦</div><div><h1>LAGOS LIFE OFFICIAL STORE</h1><p>● DIGITAL GAME CASH STORE</p></div></div><span class="pill">FAST ORDER SUBMISSION</span></div></header>
+<main class="wrap">
+  <div class="tabs">
+    <button class="tab active" id="buyTab" onclick="switchTab('buy')">Buy Cash</button>
+    <button class="tab" id="sellTab" onclick="switchTab('sell')">Sell Cash</button>
+    <button class="tab" id="adminTab" onclick="switchTab('admin')">Admin</button>
+  </div>
+
+  <section id="buySection" class="section">
+    <div class="layout">
+      <div class="card">
+        <h2>Buy Lagos Life Cash</h2><p class="muted small">Choose a package and enter your exact in-game username before placing an order.</p>
+        <label class="label" for="buyUsername">1. In-game username</label>
+        <input class="field" id="buyUsername" maxlength="40" placeholder="Enter your exact game username" oninput="updateSummary()">
+        <p class="muted small">Please check your spelling carefully. Your order will be submitted using this username.</p>
+        <div style="height:15px"></div>
+        <span class="label">2. Choose a cash package</span>
+        <div class="grid" id="packGrid"></div>
+      </div>
+      <div class="card">
+        <h3>Order Summary</h3>
+        <div class="summary">
+          <div class="row"><span>Package</span><b id="sumPack">5B</b></div>
+          <div class="row"><span>Game username</span><b id="sumUser">Not entered</b></div>
+          <div class="row"><span>Order type</span><b>Buy game cash</b></div>
+          <div class="row total"><span>Total to pay</span><b class="gold" id="sumPrice">₦500</b></div>
+        </div>
+        <div style="height:13px"></div>
+        <button class="btn" onclick="createBuyOrder()">Continue to Payment Instructions →</button>
+        <p class="muted small" style="margin-bottom:0">Your order is saved on this device as <b>Pending Payment</b>. Payment is not automatically verified by this frontend.</p>
+      </div>
+      <div class="card full">
+        <h3>How it works</h3><div class="small muted">1. Enter your game username. &nbsp; 2. Select a package. &nbsp; 3. Submit your order. &nbsp; 4. Transfer the exact amount and submit your payment confirmation. Your order remains pending until you or the store owner verifies payment and delivery.</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="sellSection" class="section hidden">
+    <div class="card">
+      <h2>Sell Your In-Game Cash</h2><p class="muted small">Sell rate: <b class="gold">₦3,500 per 1T (1,000B)</b>.</p>
+      <label class="label" for="sellUsername">1. In-game username</label><input class="field" id="sellUsername" placeholder="Enter your exact username" maxlength="40">
+      <div style="height:14px"></div>
+      <label class="label" for="sellAmount">2. Amount to sell (billions)</label><input class="field" id="sellAmount" type="number" min="100" step="100" value="1000" oninput="calcSell()">
+      <div class="small muted" style="margin:9px 0">Quick select:</div>
+      <div style="display:flex;gap:8px;flex-wrap:wrap"><button class="btn secondary smallbtn" onclick="setSell(100)">100B</button><button class="btn secondary smallbtn" onclick="setSell(500)">500B</button><button class="btn secondary smallbtn" onclick="setSell(1000)">1T</button><button class="btn secondary smallbtn" onclick="setSell(2000)">2T</button></div>
+      <div class="summary" style="margin:15px 0"><div class="row"><span>Estimated payout</span><b class="gold" id="sellPayout">₦3,500</b></div></div>
+      <label class="label" for="sellBank">3. Payout method</label><select class="field" id="sellBank"><option>OPay</option><option>PalmPay</option><option>Moniepoint</option><option>Kuda</option><option>GTBank</option><option>Access Bank</option><option>Other bank</option></select>
+      <div style="height:9px"></div><input class="field" id="sellAccount" inputmode="numeric" maxlength="10" placeholder="10-digit account number">
+      <div style="height:9px"></div><input class="field" id="sellAccountName" placeholder="Account holder name">
+      <div style="height:14px"></div><button class="btn" onclick="createSellOrder()">Submit Sell Request →</button>
+      <p class="muted small">Do not send game cash until the store owner confirms your sell request and receiver details. Payout is not automated by this frontend.</p>
+    </div>
+  </section>
+
+  <section id="adminSection" class="section hidden">
+    <div class="card" id="adminLogin">
+      <h2>Store Admin Login</h2><p class="muted small">Enter your admin PIN to view orders saved in this browser.</p>
+      <input class="field" id="adminPin" type="password" inputmode="numeric" placeholder="Admin PIN" maxlength="12">
+      <div style="height:12px"></div><button class="btn" onclick="adminLogin()">Login</button>
+      <p class="muted small">Frontend-only note: this PIN is not secure authentication. Anyone with access to the website code can inspect it.</p>
+    </div>
+    <div class="card hidden" id="adminPanel">
+      <div class="adminbar"><div><h2>Store Dashboard</h2><p class="muted small">Orders and visits recorded on this device only.</p></div><button class="btn secondary smallbtn" onclick="adminLogout()">Logout</button></div>
+      <div class="stats" style="margin:15px 0"><div class="stat"><b id="visitCount">0</b><span>PAGE VISITS</span></div><div class="stat"><b id="orderCount">0</b><span>ORDERS</span></div><div class="stat"><b id="pendingCount">0</b><span>PENDING</span></div></div>
+      <div class="adminbar"><h3>Customer Orders</h3><button class="btn secondary smallbtn" onclick="exportOrders()">Export CSV</button></div>
+      <div id="ordersList"></div>
+      <div style="height:14px"></div><button class="btn danger" onclick="clearOrders()">Clear all local orders</button>
+      <p class="muted small">This dashboard cannot see orders placed by customers on other phones. A shared customer/admin system needs a backend or database.</p>
+    </div>
+  </section>
+  <footer class="footer">Lagos Life Official Store • Digital entertainment credits<br>WhatsApp Support: +234 906 904 3770</footer>
+</main>
+
+<div class="modal" id="paymentModal" role="dialog" aria-modal="true">
+ <div class="modalbox"><button class="close" onclick="closeModal()" aria-label="Close">×</button>
+  <div id="paymentView">
+   <div class="pill" style="display:inline-block">ORDER CREATED</div><h2 style="margin:12px 0 5px">Transfer Payment</h2><p class="muted small">Use these store transfer details. After transferring, submit the confirmation below. Your order will remain pending until payment is checked.</p>
+   <div class="bankbox">
+    <div class="row"><span>Bank / Wallet</span><b>OPay</b></div>
+    <div class="row"><span>Account number</span><b class="gold">8167137608 <button class="copy" onclick="copyText('8167137608')">Copy</button></b></div>
+    <div class="row"><span>Account name</span><b>Jafar Abubakar</b></div>
+    <div class="row"><span>Amount</span><b class="gold" id="paymentAmount">₦500</b></div>
+    <div class="row"><span>Order reference</span><b id="paymentRef">LL-000000</b></div>
+   </div>
+   <label class="label" for="paymentNote">Payment note / transfer sender name (optional)</label><input class="field" id="paymentNote" placeholder="Name shown on transfer">
+   <div style="height:12px"></div><button class="btn" onclick="submitPaymentNotice()">I've Made Payment — Submit Order</button>
+   <p class="muted small">This button only sends a payment notice into the local order list. It does not confirm that money was received.</p>
+  </div>
+  <div id="doneView" class="hidden" style="text-align:center;padding:20px 0">
+   <div style="font-size:42px">✓</div><h2 class="success">Order Submitted</h2><p class="muted small">Your order reference is <b id="doneRef"></b>. Save this reference and contact WhatsApp support if needed.</p><button class="btn" onclick="closeModal()">Done</button>
+  </div>
+ </div>
+</div>
+<script>
+const PACKS=[
+ {amount:'5B',price:500,label:'Starter'},
+ {amount:'25B',price:2500,label:'Popular'},
+ {amount:'100B',price:5000,label:'Great Value'},
+ {amount:'500B',price:8000,label:'VIP Pack'},
+ {amount:'1T',price:15000,label:'Billionaire'}
+];
+let selected=PACKS[0],activeOrderRef=null;
+const $=id=>document.getElementById(id);
+const money=n=>'₦'+Number(n).toLocaleString('en-NG');
+function getOrders(){try{return JSON.parse(localStorage.getItem('ll_orders')||'[]')}catch(e){return[]}}
+function saveOrders(v){localStorage.setItem('ll_orders',JSON.stringify(v))}
+function renderPacks(){
+ $('packGrid').innerHTML=PACKS.map((p,i)=>`<button class="pack ${p===selected?'selected':''}" onclick="selectPack(${i})"><div class="tag">${p.label}</div><div class="amount">${p.amount}</div><div class="price">${money(p.price)}</div></button>`).join('');
+ updateSummary();
+}
+function selectPack(i){selected=PACKS[i];renderPacks()}
+function updateSummary(){$('sumPack').textContent=selected.amount;$('sumPrice').textContent=money(selected.price);$('sumUser').textContent=$('buyUsername').value.trim()||'Not entered'}
+function switchTab(tab){
+ ['buy','sell','admin'].forEach(t=>{$(t+'Section').classList.toggle('hidden',t!==tab);$(t+'Tab').classList.toggle('active',t===tab)});
+ if(tab==='admin'){ $('adminLogin').classList.remove('hidden');$('adminPanel').classList.add('hidden');}
+}
+function newRef(){return 'LL-'+Date.now().toString().slice(-8)+'-'+Math.floor(10+Math.random()*90)}
+function addOrder(order){const a=getOrders();a.unshift(order);saveOrders(a)}
+function createBuyOrder(){
+ const username=$('buyUsername').value.trim();
+ if(username.length<2){alert('Please enter your exact in-game username first.');$('buyUsername').focus();return}
+ const ref=newRef();activeOrderRef=ref;
+ addOrder({ref,type:'Buy',username,package:selected.amount,amount:selected.price,status:'Pending Payment',created:new Date().toLocaleString(),paymentNote:''});
+ $('paymentAmount').textContent=money(selected.price);$('paymentRef').textContent=ref;
+ $('paymentView').classList.remove('hidden');$('doneView').classList.add('hidden');$('paymentModal').classList.add('show');
+}
+function submitPaymentNotice(){
+ const orders=getOrders(),o=orders.find(x=>x.ref===activeOrderRef);if(!o)return;
+ o.status='Payment Notice Submitted';o.paymentNote=$('paymentNote').value.trim();o.noticeTime=new Date().toLocaleString();saveOrders(orders);
+ $('paymentView').classList.add('hidden');$('doneView').classList.remove('hidden');$('doneRef').textContent=activeOrderRef;
+}
+function closeModal(){$('paymentModal').classList.remove('show')}
+function copyText(v){if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(v).then(()=>alert('Copied: '+v)).catch(()=>alert(v))}else alert(v)}
+function calcSell(){let b=Number($('sellAmount').value)||0;$('sellPayout').textContent=money(Math.max(0,b/1000*3500))}
+function setSell(v){$('sellAmount').value=v;calcSell()}
+function createSellOrder(){
+ const username=$('sellUsername').value.trim(),b=Number($('sellAmount').value),account=$('sellAccount').value.trim(),name=$('sellAccountName').value.trim();
+ if(!username){alert('Enter your in-game username.');return}
+ if(!Number.isFinite(b)||b<100||b%100!==0){alert('Enter an amount of at least 100B in steps of 100B.');return}
+ if(!/^\\d{10}$/.test(account)){alert('Enter a valid 10-digit bank account number.');return}
+ if(!name){alert('Enter the account holder name.');return}
+ const ref=newRef(),payout=b/1000*3500;
+ addOrder({ref,type:'Sell',username,package:b+'B',amount:payout,gameCash:b+'B',bank:$('sellBank').value,account,accountName:name,status:'Sell Request Submitted',created:new Date().toLocaleString()});
+ alert('Sell request submitted. Reference: '+ref+'. Wait for the store owner to confirm before sending game cash.');
+ $('sellUsername').value='';$('sellAccount').value='';$('sellAccountName').value='';
+}
+function adminLogin(){if($('adminPin').value==='849233'){$('adminLogin').classList.add('hidden');$('adminPanel').classList.remove('hidden');renderAdmin()}else alert('Incorrect admin PIN.')}
+function adminLogout(){$('adminPanel').classList.add('hidden');$('adminLogin').classList.remove('hidden');$('adminPin').value=''}
+function renderAdmin(){
+ const orders=getOrders();$('visitCount').textContent=localStorage.getItem('ll_visits')||'0';$('orderCount').textContent=orders.length;$('pendingCount').textContent=orders.filter(o=>!['Payment Received','Completed','Rejected'].includes(o.status)).length;
+ $('ordersList').innerHTML=orders.length?orders.map(o=>`<div class="order"><div class="orderhead"><span>${escapeHtml(o.type)} • ${escapeHtml(o.ref)}</span><span class="badge ${o.status==='Payment Received'||o.status==='Completed'?'paid':o.status==='Rejected'?'rejected':''}">${escapeHtml(o.status)}</span></div><div class="small muted" style="margin-top:7px">Customer: <b>${escapeHtml(o.username)}</b> · ${escapeHtml(o.package)} · ${money(o.amount)}<br>${escapeHtml(o.created||'')}${o.bank?'<br>Payout: '+escapeHtml(o.bank)+' / '+escapeHtml(o.account||''):''}${o.paymentNote?'<br>Payment note: '+escapeHtml(o.paymentNote):''}</div><div style="display:flex;gap:7px;flex-wrap:wrap;margin-top:10px"><button class="btn secondary smallbtn" onclick="setStatus('${o.ref}','Payment Received')">Mark payment received</button><button class="btn secondary smallbtn" onclick="setStatus('${o.ref}','Completed')">Mark completed</button><button class="btn danger smallbtn" onclick="setStatus('${o.ref}','Rejected')">Reject</button></div></div>`).join(''):'<p class="muted small">No orders have been saved in this browser yet.</p>';
+}
+function escapeHtml(s){return String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function setStatus(ref,status){let a=getOrders(),o=a.find(x=>x.ref===ref);if(o){o.status=status;saveOrders(a);renderAdmin()}}
+function exportOrders(){const rows=getOrders();if(!rows.length){alert('There are no orders to export.');return}const keys=[...new Set(rows.flatMap(o=>Object.keys(o)))];const csv=[keys.join(','),...rows.map(o=>keys.map(k=>'"'+String(o[k]??'').replace(/"/g,'""')+'"').join(','))].join('\\n');const blob=new Blob([csv],{type:'text/csv'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='lagos-life-orders.csv';a.click();URL.revokeObjectURL(url)}
+function clearOrders(){if(confirm('Delete all orders saved in this browser? This cannot be undone.')){saveOrders([]);renderAdmin()}}
+let visits=Number(localStorage.getItem('ll_visits')||0)+1;localStorage.setItem('ll_visits',String(visits));
+renderPacks();calcSell();
+</script>
+</body></html>
